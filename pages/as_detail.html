@@ -138,61 +138,351 @@
       return urlParams.get(name);
     }
 
-    // Dados dummy expandidos
+    // Dados expandidos incluindo AS brasileiros e internacionais principais
     const dummyData = {
-      'AS1': {
-        asn: 'AS1',
-        org: 'Example ISP Brasil',
-        country: 'BR',
-        description: 'Provedor de Internet brasileiro com foco em conectividade nacional',
-        prefixes: [
-          '2001:db8::/32',
-          '192.0.2.0/24',
-          '203.0.113.0/24',
-          '198.51.100.0/24'
-        ],
+      "AS28513": {
+        asn: "AS28513",
+        org: "Claro S.A.",
+        country: "BR",
+        description: "Maior provedor de telecomunicações do Brasil, oferecendo serviços de internet, telefonia e TV por assinatura",
+        prefixes: ["200.192.0.0/16", "201.6.0.0/16", "189.40.0.0/16", "177.52.0.0/16"],
         upstreams: [
-          {asn: 'AS2', org: 'Global Telecom'},
-          {asn: 'AS4', org: 'International Net'}
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS1299", org: "Telia Company AB"},
+          {asn: "AS3257", org: "GTT Communications"}
         ],
         peers: [
-          {asn: 'AS3', org: 'Latin America ISP'},
-          {asn: 'AS5', org: 'South America Net'}
+          {asn: "AS27699", org: "Telecom Italia S.p.A."},
+          {asn: "AS4230", org: "Embratel"}
         ],
-        routes: 42,
-        lastUpdate: '2026-03-21 14:30:00',
-        status: 'Ativo',
+        routes: 1250,
+        lastUpdate: "2026-03-21 15:45:00",
+        status: "Ativo",
+        type: "transit",
         routeHistory: [
-          {timestamp: '2026-03-21 14:30:00', prefix: '2001:db8::/32', action: 'Anúncio', status: 'Sucesso'},
-          {timestamp: '2026-03-21 13:45:00', prefix: '192.0.2.0/24', action: 'Atualização', status: 'Sucesso'},
-          {timestamp: '2026-03-21 12:15:00', prefix: '203.0.113.0/24', action: 'Anúncio', status: 'Sucesso'},
-          {timestamp: '2026-03-21 11:20:00', prefix: '198.51.100.0/24', action: 'Retirada', status: 'Sucesso'}
+          {timestamp: "2026-03-21 15:45:00", prefix: "200.192.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:30:00", prefix: "201.6.0.0/16", action: "Atualização", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:15:00", prefix: "189.40.0.0/16", action: "Anúncio", status: "Sucesso"}
         ],
         links: [
-          {source: 'AS1', target: 'AS2'},
-          {source: 'AS1', target: 'AS3'},
-          {source: 'AS1', target: 'AS4'},
-          {source: 'AS1', target: 'AS5'}
+          {source: "AS28513", target: "AS3356"},
+          {source: "AS28513", target: "AS1299"},
+          {source: "AS28513", target: "AS3257"},
+          {source: "AS28513", target: "AS27699"},
+          {source: "AS28513", target: "AS4230"}
         ]
       },
-      'AS2': {
-        asn: 'AS2',
-        org: 'Global Telecom',
-        country: 'US',
-        description: 'Provedor global de telecomunicações',
-        prefixes: ['10.0.0.0/8', '172.16.0.0/12'],
-        upstreams: [{asn: 'AS6', org: 'Tier 1 Provider'}],
-        peers: [{asn: 'AS1', org: 'Example ISP Brasil'}, {asn: 'AS7', org: 'European Net'}],
-        routes: 156,
-        lastUpdate: '2026-03-21 14:25:00',
-        status: 'Ativo',
+      "AS27699": {
+        asn: "AS27699",
+        org: "Telecom Italia S.p.A.",
+        country: "BR",
+        description: "TIM Brasil, subsidiária brasileira da Telecom Italia, oferecendo serviços móveis e de internet",
+        prefixes: ["191.5.0.0/16", "191.36.0.0/16", "186.192.0.0/16"],
+        upstreams: [
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS1299", org: "Telia Company AB"}
+        ],
+        peers: [
+          {asn: "AS28513", org: "Claro S.A."},
+          {asn: "AS4230", org: "Embratel"}
+        ],
+        routes: 980,
+        lastUpdate: "2026-03-21 15:40:00",
+        status: "Ativo",
+        type: "transit",
         routeHistory: [
-          {timestamp: '2026-03-21 14:25:00', prefix: '10.0.0.0/8', action: 'Anúncio', status: 'Sucesso'}
+          {timestamp: "2026-03-21 15:40:00", prefix: "191.5.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:25:00", prefix: "191.36.0.0/16", action: "Atualização", status: "Sucesso"}
         ],
         links: [
-          {source: 'AS2', target: 'AS1'},
-          {source: 'AS2', target: 'AS6'},
-          {source: 'AS2', target: 'AS7'}
+          {source: "AS27699", target: "AS3356"},
+          {source: "AS27699", target: "AS1299"},
+          {source: "AS27699", target: "AS28513"},
+          {source: "AS27699", target: "AS4230"}
+        ]
+      },
+      "AS4230": {
+        asn: "AS4230",
+        org: "Embratel",
+        country: "BR",
+        description: "Empresa Brasileira de Telecomunicações, maior backbone nacional brasileiro",
+        prefixes: ["200.192.0.0/16", "200.219.0.0/16", "200.220.0.0/16"],
+        upstreams: [
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS1299", org: "Telia Company AB"},
+          {asn: "AS3257", org: "GTT Communications"}
+        ],
+        peers: [
+          {asn: "AS28513", org: "Claro S.A."},
+          {asn: "AS27699", org: "Telecom Italia S.p.A."}
+        ],
+        routes: 1450,
+        lastUpdate: "2026-03-21 15:35:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:35:00", prefix: "200.192.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:20:00", prefix: "200.219.0.0/16", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS4230", target: "AS3356"},
+          {source: "AS4230", target: "AS1299"},
+          {source: "AS4230", target: "AS3257"},
+          {source: "AS4230", target: "AS28513"},
+          {source: "AS4230", target: "AS27699"}
+        ]
+      },
+      "AS53006": {
+        asn: "AS53006",
+        org: "Algar Telecom",
+        country: "BR",
+        description: "Provedor regional brasileiro com foco em telecomunicações no interior de São Paulo",
+        prefixes: ["177.223.0.0/16", "191.185.0.0/16", "177.128.0.0/16"],
+        upstreams: [
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS28513", org: "Claro S.A."}
+        ],
+        peers: [
+          {asn: "AS27699", org: "Telecom Italia S.p.A."}
+        ],
+        routes: 320,
+        lastUpdate: "2026-03-21 15:30:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:30:00", prefix: "177.223.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:15:00", prefix: "191.185.0.0/16", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS53006", target: "AS3356"},
+          {source: "AS53006", target: "AS28513"},
+          {source: "AS53006", target: "AS27699"}
+        ]
+      },
+      "AS262287": {
+        asn: "AS262287",
+        org: "Maxx Telecom",
+        country: "BR",
+        description: "Provedor regional brasileiro focado no Nordeste do país",
+        prefixes: ["177.54.0.0/16", "177.55.0.0/16", "189.76.0.0/16"],
+        upstreams: [
+          {asn: "AS28513", org: "Claro S.A."},
+          {asn: "AS27699", org: "Telecom Italia S.p.A."}
+        ],
+        peers: [
+          {asn: "AS4230", org: "Embratel"}
+        ],
+        routes: 180,
+        lastUpdate: "2026-03-21 15:25:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:25:00", prefix: "177.54.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:10:00", prefix: "177.55.0.0/16", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS262287", target: "AS28513"},
+          {source: "AS262287", target: "AS27699"},
+          {source: "AS262287", target: "AS4230"}
+        ]
+      },
+      "AS28186": {
+        asn: "AS28186",
+        org: "ITS Telecom",
+        country: "BR",
+        description: "Provedor regional brasileiro focado na Bahia",
+        prefixes: ["189.89.0.0/16", "189.90.0.0/16", "177.184.0.0/16"],
+        upstreams: [
+          {asn: "AS28513", org: "Claro S.A."},
+          {asn: "AS3356", org: "Level 3 Communications"}
+        ],
+        peers: [
+          {asn: "AS27699", org: "Telecom Italia S.p.A."}
+        ],
+        routes: 95,
+        lastUpdate: "2026-03-21 15:20:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:20:00", prefix: "189.89.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:05:00", prefix: "189.90.0.0/16", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS28186", target: "AS28513"},
+          {source: "AS28186", target: "AS3356"},
+          {source: "AS28186", target: "AS27699"}
+        ]
+      },
+      "AS14840": {
+        asn: "AS14840",
+        org: "BR.Digital Provider",
+        country: "BR",
+        description: "Provedor brasileiro focado em soluções digitais e cloud",
+        prefixes: ["177.101.0.0/16", "177.102.0.0/16", "191.241.0.0/16"],
+        upstreams: [
+          {asn: "AS28513", org: "Claro S.A."},
+          {asn: "AS27699", org: "Telecom Italia S.p.A."}
+        ],
+        peers: [
+          {asn: "AS4230", org: "Embratel"}
+        ],
+        routes: 75,
+        lastUpdate: "2026-03-21 15:15:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:15:00", prefix: "177.101.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 14:00:00", prefix: "177.102.0.0/16", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS14840", target: "AS28513"},
+          {source: "AS14840", target: "AS27699"},
+          {source: "AS14840", target: "AS4230"}
+        ]
+      },
+      "AS1916": {
+        asn: "AS1916",
+        org: "Rede Nacional de Ensino e Pesquisa",
+        country: "BR",
+        description: "Rede acadêmica brasileira que interconecta universidades e centros de pesquisa",
+        prefixes: ["200.128.0.0/16", "200.129.0.0/16", "200.130.0.0/16"],
+        upstreams: [
+          {asn: "AS28513", org: "Claro S.A."},
+          {asn: "AS27699", org: "Telecom Italia S.p.A."}
+        ],
+        peers: [
+          {asn: "AS4230", org: "Embratel"}
+        ],
+        routes: 200,
+        lastUpdate: "2026-03-21 15:10:00",
+        status: "Ativo",
+        type: "enterprise",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:10:00", prefix: "200.128.0.0/16", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:55:00", prefix: "200.129.0.0/16", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS1916", target: "AS28513"},
+          {source: "AS1916", target: "AS27699"},
+          {source: "AS1916", target: "AS4230"}
+        ]
+      },
+      "AS3356": {
+        asn: "AS3356",
+        org: "Level 3 Communications",
+        country: "US",
+        description: "Um dos maiores provedores Tier 1 do mundo, parte da CenturyLink",
+        prefixes: ["4.0.0.0/8", "8.0.0.0/8", "12.0.0.0/8"],
+        upstreams: [],
+        peers: [
+          {asn: "AS1299", org: "Telia Company AB"},
+          {asn: "AS3257", org: "GTT Communications"}
+        ],
+        routes: 8500,
+        lastUpdate: "2026-03-21 15:05:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:05:00", prefix: "4.0.0.0/8", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:50:00", prefix: "8.0.0.0/8", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS3356", target: "AS1299"},
+          {source: "AS3356", target: "AS3257"}
+        ]
+      },
+      "AS1299": {
+        asn: "AS1299",
+        org: "Telia Company AB",
+        country: "SE",
+        description: "Provedor sueco Tier 1 com presença global",
+        prefixes: ["95.0.0.0/8", "213.0.0.0/8", "194.0.0.0/8"],
+        upstreams: [],
+        peers: [
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS3257", org: "GTT Communications"}
+        ],
+        routes: 6200,
+        lastUpdate: "2026-03-21 15:00:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 15:00:00", prefix: "95.0.0.0/8", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:45:00", prefix: "213.0.0.0/8", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS1299", target: "AS3356"},
+          {source: "AS1299", target: "AS3257"}
+        ]
+      },
+      "AS3257": {
+        asn: "AS3257",
+        org: "GTT Communications",
+        country: "US",
+        description: "Provedor global de comunicações e cloud connectivity",
+        prefixes: ["173.0.0.0/8", "199.0.0.0/8", "208.0.0.0/8"],
+        upstreams: [],
+        peers: [
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS1299", org: "Telia Company AB"}
+        ],
+        routes: 4100,
+        lastUpdate: "2026-03-21 14:55:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 14:55:00", prefix: "173.0.0.0/8", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:40:00", prefix: "199.0.0.0/8", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS3257", target: "AS3356"},
+          {source: "AS3257", target: "AS1299"}
+        ]
+      },
+      "AS174": {
+        asn: "AS174",
+        org: "Cogent Communications",
+        country: "US",
+        description: "Provedor Tier 1 focado em backbone global",
+        prefixes: ["38.0.0.0/8", "66.0.0.0/8", "154.0.0.0/8"],
+        upstreams: [],
+        peers: [
+          {asn: "AS3356", org: "Level 3 Communications"}
+        ],
+        routes: 3800,
+        lastUpdate: "2026-03-21 14:50:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 14:50:00", prefix: "38.0.0.0/8", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:35:00", prefix: "66.0.0.0/8", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS174", target: "AS3356"}
+        ]
+      },
+      "AS2914": {
+        asn: "AS2914",
+        org: "NTT America, Inc.",
+        country: "JP",
+        description: "Subsidiária americana da NTT, provedor Tier 1 japonês",
+        prefixes: ["128.0.0.0/8", "129.0.0.0/8", "165.0.0.0/8"],
+        upstreams: [],
+        peers: [
+          {asn: "AS3356", org: "Level 3 Communications"},
+          {asn: "AS1299", org: "Telia Company AB"}
+        ],
+        routes: 7200,
+        lastUpdate: "2026-03-21 14:45:00",
+        status: "Ativo",
+        type: "transit",
+        routeHistory: [
+          {timestamp: "2026-03-21 14:45:00", prefix: "128.0.0.0/8", action: "Anúncio", status: "Sucesso"},
+          {timestamp: "2026-03-21 13:30:00", prefix: "129.0.0.0/8", action: "Atualização", status: "Sucesso"}
+        ],
+        links: [
+          {source: "AS2914", target: "AS3356"},
+          {source: "AS2914", target: "AS1299"}
         ]
       }
     };
@@ -204,16 +494,22 @@
 
       if (data) {
         // Atualizar título
-        document.getElementById('asnTitle').textContent = `${data.asn} - ${data.org}`;
+        const flagIcon = data.country === 'BR' ? '🇧🇷' : data.country === 'US' ? '🇺🇸' : data.country === 'SE' ? '🇸🇪' : data.country === 'JP' ? '🇯🇵' : '🌍';
+        document.getElementById('asnTitle').textContent = `${flagIcon} ${data.asn} - ${data.org}`;
 
         // Informações básicas
         const infoDiv = document.getElementById('info');
+        const typeBadge = data.type === 'transit' ?
+          '<span class="badge bg-primary">Transit Provider</span>' :
+          '<span class="badge bg-info">Enterprise Network</span>';
+
         infoDiv.innerHTML = `
           <div class="row">
             <div class="col-md-6">
               <p><strong>ASN:</strong> ${data.asn}</p>
               <p><strong>Organização:</strong> ${data.org}</p>
-              <p><strong>País:</strong> ${data.country}</p>
+              <p><strong>Tipo:</strong> ${typeBadge}</p>
+              <p><strong>País:</strong> ${data.country === 'BR' ? 'Brasil' : data.country === 'US' ? 'Estados Unidos' : data.country === 'SE' ? 'Suécia' : data.country === 'JP' ? 'Japão' : data.country}</p>
               <p><strong>Status:</strong> <span class="badge bg-success">${data.status}</span></p>
             </div>
             <div class="col-md-6">
@@ -392,16 +688,7 @@
   </script>
 </body>
 </html>
-  const nodes = [{id:data.asn},{id:data.upstreams[0]},{id:data.peers[0]}];
-  const links = data.links;
-  const w = document.getElementById('localGraph').clientWidth;
-  const h = document.getElementById('localGraph').clientHeight;
-  const svg = d3.select('#localGraph').append('svg').attr('width',w).attr('height',h);
-  const sim = d3.forceSimulation(nodes).force('link',d3.forceLink(links).id(d=>d.id).distance(100)).force('charge',d3.forceManyBody().strength(-200)).force('center',d3.forceCenter(w/2,h/2));
-  const link = svg.append('g').attr('stroke','#aaa').selectAll('line').data(links).join('line');
-  const node = svg.append('g').attr('stroke','#fff').attr('stroke-width',1.5).selectAll('circle').data(nodes).join('circle').attr('r',10).attr('fill','#3182ce');
-  sim.on('tick',()=>{link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);node.attr('cx',d=>d.x).attr('cy',d=>d.y);});
-}
+
 </script>
 
 <script>lucide.createIcons();</script>

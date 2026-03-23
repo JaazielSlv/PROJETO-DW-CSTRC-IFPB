@@ -197,6 +197,22 @@ Uma página dedicada permite ao usuário pesquisar e investigar redes específic
 
 **Componentes:**
 - **Campo de busca** único (ASN, IP, prefixo ou nome organizacional).
+- **Acesso rápido a AS populares:**
+  - **AS Brasileiros Principais:**
+    - AS28513 - Claro S.A. (maior provedor brasileiro)
+    - AS27699 - Telecom Italia S.p.A. (TIM Brasil)
+    - AS4230 - Embratel (maior backbone nacional)
+    - AS53006 - Algar Telecom
+    - AS262287 - Maxx Telecom
+    - AS28186 - ITS Telecom
+    - AS14840 - BR.Digital Provider
+    - AS1916 - Rede Nacional de Ensino e Pesquisa (RNP)
+  - **Transit Providers Internacionais:**
+    - AS3356 - Level 3 Communications (CenturyLink)
+    - AS1299 - Telia Company AB
+    - AS3257 - GTT Communications
+    - AS174 - Cogent Communications
+    - AS2914 - NTT America, Inc.
 - **Resultados detalhados** exibindo:
   - ASN e nome da organização;
   - lista de prefixos atualmente anunciados;
